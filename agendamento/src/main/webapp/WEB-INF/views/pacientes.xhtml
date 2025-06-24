@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Pacientes</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="nome" value="Nome:"/>
+            <h:inputText id="nome" value="#{pacienteController.paciente.nome}" required="true"/>
+
+            <h:outputLabel for="telefone" value="Telefone:"/>
+            <h:inputText id="telefone" value="#{pacienteController.paciente.telefone}"/>
+
+            <h:outputLabel for="email" value="Email:"/>
+            <h:inputText id="email" value="#{pacienteController.paciente.email}"/>
+
+            <h:commandButton value="Salvar" action="#{pacienteController.salvar}"/>
+        </h:panelGrid>
+    </h:form>
+
+    <h:dataTable value="#{pacienteController.pacientes}" var="p">
+        <h:column><f:facet name="header">Nome</f:facet>#{p.nome}</h:column>
+        <h:column><f:facet name="header">Telefone</f:facet>#{p.telefone}</h:column>
+        <h:column><f:facet name="header">Email</f:facet>#{p.email}</h:column>
+        <h:column>
+            <h:commandButton value="Excluir" action="#{pacienteController.deletar(p)}"/>
+        </h:column>
+    </h:dataTable>
+</h:body>
+</html>
