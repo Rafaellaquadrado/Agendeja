@@ -1,36 +1,106 @@
 # Agendeja
 
-# Sistema de Agendamento de Consultas
+🎯 Objetivo
+Desenvolver um sistema web de agendamento de consultas médicas, com:
 
-## Objetivo do projeto
-Este sistema foi desenvolvido para facilitar o agendamento de consultas médicas em clínicas ou consultórios, permitindo o cadastro e gerenciamento de pacientes, médicos e suas consultas, garantindo uma agenda organizada e eficiente.
+Cadastro de pacientes
 
-## Funcionalidades principais
-- Cadastro, edição e exclusão de pacientes.
-- Cadastro, edição e exclusão de médicos com suas especialidades.
-- Agendamento, visualização e cancelamento de consultas.
-- Validação para evitar conflitos de horário.
-- Interface web amigável construída com JSF.
-- Persistência dos dados em banco MySQL.
-- Backend robusto desenvolvido com Spring Boot.
+Listagem e exclusão de pacientes
 
-## Tecnologias utilizadas
-- Java 17
-- Spring Boot 3.x
-- JSF (JavaServer Faces) com JoinFaces
-- MySQL
-- Maven para gerenciamento de dependências
-- IDE: Eclipse ou IntelliJ IDEA
+Integração com banco de dados MySQL
 
-## Como rodar o projeto
+Backend com Spring Boot
 
-### Pré-requisitos
-- Java JDK 17 instalado
-- MySQL instalado e banco de dados criado
-- Maven instalado
-- IDE configurada para executar projetos Java Maven
+Frontend com JSF
 
-### Passos para executar
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu_usuario/nome_do_repositorio.git
+🚀 Tecnologias utilizadas
+Java 17
+
+Spring Boot
+
+Spring Data JPA
+
+JSF (Jakarta Faces)
+
+Jakarta CDI
+
+MySQL
+
+Maven
+
+Eclipse IDE
+
+🔧 Como rodar o projeto:
+
+Pré-requisitos
+Java 17 instalado
+
+MySQL instalado e rodando
+
+Eclipse ou IDE de sua preferência com suporte a Maven
+
+Git instalado
+
+Configuração do banco de dados
+1. Crie um banco de dados no MySQL:
+
+sql
+Copiar
+Editar
+CREATE DATABASE agendamento;
+
+2.Atualize as credenciais no arquivo src/main/resources/application.properties:
+
+properties
+Copiar
+Editar
+spring.datasource.url=jdbc:mysql://localhost:3306/agendamento
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+spring.jpa.hibernate.ddl-auto=update
+
+Rodando a aplicação:
+
+1.No terminal, na raiz do projeto:
+
+bash
+Copiar
+Editar
+mvn spring-boot:run
+
+2.Acesse no navegador:
+
+bash
+Copiar
+Editar
+http://localhost:8080/WEB-INF/views/pacientes.xhtml
+
+📂 Estrutura do projeto
+css
+Copiar
+Editar
+src/
+ └─ main/
+     ├─ java/
+     │   └─ com.agendeja.agendamento
+     │        ├─ AgendamentoApplication.java
+     │        ├─ model/
+     │        ├─ repository/
+     │        └─ controller/
+     └─ resources/
+         └─ application.properties
+ └─ webapp/
+     └─ WEB-INF/views/pacientes.xhtml
+     
+✨ Próximos passos:
+Implementar cadastro de médicos
+
+Implementar cadastro de consultas
+
+Tela inicial com dashboard
+
+Melhorias visuais no frontend com PrimeFaces ou Bootstrap
+
+👩‍💻 Autor
+Lara Rafaella Quadrado Faria
+LinkedIn https://www.linkedin.com/in/lara-rafaella-de-oliveira-quadrado-faria-25b624178/
